@@ -1,0 +1,39 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>OceanExplorer</h1>
+    <p class="lead">
+        Ocean Explorer is an online-ticketing website about water sports in Australian.
+    </p>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <p><a href="https://localhost:44370/Account/Register" class="btn btn-danger btn-lg">Sign-in &raquo;</a></p>
+        <p><a href="https://localhost:44370/Account/Login" class="btn btn-primary btn-lg">Log-in &raquo;</a></p>
+
+    }
+
+</div>
+    @if (User.Identity.IsAuthenticated)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Select ticket</h2>
+            <p>
+                Select your prefered tickets .
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Book tickets &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Water sports activites</h2>
+            <p>Newest water sports will be showen in this section</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Check activites &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>My account</h2>
+            <p>You can check and manage your tickets and see your account information here.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>
+}
